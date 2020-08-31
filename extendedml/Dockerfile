@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook:41d6b29cd15c
+FROM jupyter/datascience-notebook:latest
 
 # install additional package...
 RUN pip install --no-cache-dir psycopg \
