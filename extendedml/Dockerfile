@@ -1,7 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
 # install additional package...
-RUN pip install --no-cache-dir psycopg \
+RUN pip install --no-cache-dir psycopg2 \
 	python-pachyderm pystardog \
 	pandas_profiling pyodbc \
 	azure-storage-file-datalake azure-storage-blob \
