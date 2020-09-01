@@ -7,7 +7,7 @@ RUN apt-get update && \
     unixodbc-dev
 
 # install additional package...
-RUN conda install --quiet --yes psycopg2-binary \
+RUN pip install --no-cache-dir psycopg2-binary \
 	python-pachyderm pystardog \
 	pandas_profiling pyodbc \
 	azure-storage-file-datalake azure-storage-blob \
