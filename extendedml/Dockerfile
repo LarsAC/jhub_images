@@ -1,5 +1,7 @@
 FROM jupyter/datascience-notebook:latest
 
+RUN apt update && apt install -y build-essential
+
 # install additional package...
 RUN pip install --no-cache-dir psycopg2-binary \
 	python-pachyderm pystardog \
