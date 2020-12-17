@@ -20,7 +20,7 @@ RUN apt-get update && \
     chmod +x mc && \
     mv mc /usr/bin
 
-RUN conda install -c conda-forge rdkit
+RUN conda install -c conda-forge rdkit fpsim2
 
 RUN python -m pip install -U pip
 
@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir psycopg2-binary \
         pandas_profiling pyodbc nibabel nilearn \
         azure-storage-file-datalake azure-storage-blob \
         azure-storage-file-share rdflib rdfframes tqdm \
-        networkx ampligraph
+        networkx ampligraph chembl_webresource_client
 
 RUN pip install --pre --use-deprecated=legacy-resolver deepchem
 
