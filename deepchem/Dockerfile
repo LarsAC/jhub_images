@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir psycopg2-binary \
         pandas_profiling pyodbc nibabel nilearn \
         azure-storage-file-datalake azure-storage-blob \
         azure-storage-file-share rdflib rdfframes tqdm \
-        networkx ampligraph chembl_webresource_client
+        networkx ampligraph chembl_webresource_client sparql-client
 
 RUN pip install --pre --use-deprecated=legacy-resolver deepchem
 
