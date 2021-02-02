@@ -8,6 +8,8 @@ RUN apt-get update && \
     chmod +x mc && \
     mv mc /usr/bin
 
+RUN pip install --upgrade jupyterlab jupyterlab-git
+
 # install additional package...
 RUN pip install --no-cache-dir psycopg2-binary \
 	python-pachyderm pystardog \
