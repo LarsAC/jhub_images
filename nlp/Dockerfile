@@ -16,5 +16,6 @@ RUN pip install --no-cache-dir psycopg2-binary pywedge \
 	pandas_profiling pyodbc nibabel nilearn \
 	azure-storage-file-datalake azure-storage-blob \
 	azure-storage-file-share rdflib rdfframes tqdm networkx \
-        gensim spacy scispacy nltk flair bertopic sentence-transformers
+        gensim spacy scispacy nltk flair bertopic sentence-transformers \
+	farm-haystack
 
