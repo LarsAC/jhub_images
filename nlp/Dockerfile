@@ -11,11 +11,5 @@ RUN apt-get update && \
 RUN pip install --upgrade jupyterlab jupyterlab-git
 
 # install additional package...
-RUN pip install --no-cache-dir psycopg2-binary pywedge \
-	python-pachyderm pystardog torch torchvision \
-	pandas_profiling pyodbc nibabel nilearn \
-	azure-storage-file-datalake azure-storage-blob \
-	azure-storage-file-share rdflib rdfframes tqdm networkx \
-        gensim spacy scispacy nltk flair bertopic sentence-transformers \
-	farm-haystack
+RUN pip install --no-cache-dir psycopg2-binary pywedge farm-haystack
 
