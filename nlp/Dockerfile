@@ -1,4 +1,5 @@
-FROM jupyter/datascience-notebook:latest
+FROM jupyter/datascience-notebook:python-3.8.8
+
 
 USER root
 
