@@ -4,7 +4,7 @@ FROM jupyter/datascience-notebook:python-3.8.8
 USER root
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends unixodbc-dev && \
+    apt-get install -y --no-install-recommends unixodbc-dev poppler-utils && \
     wget https://dl.min.io/client/mc/release/linux-amd64/mc && \
     chmod +x mc && \
     mv mc /usr/bin
