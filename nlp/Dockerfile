@@ -12,5 +12,8 @@ RUN apt-get update && \
 RUN pip install --upgrade jupyterlab jupyterlab-git
 
 # install additional package...
-RUN pip install --no-cache-dir psycopg2-binary pywedge farm-haystack
+RUN pip install --no-cache-dir psycopg2-binary pywedge pymed
+
+RUN git clone https://github.com/deepset-ai/haystack.git && \
+    cd haystack && pip install --editable .
 
