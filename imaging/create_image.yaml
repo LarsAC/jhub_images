@@ -1,0 +1,40 @@
+name: $(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+​​​​​​​
+pr: none
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - imaging/
+
+variables:
+  - group: build_jobs_vg
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: 'CreateImage'
+  displayName: 'Create base jhub image'
+  jobs:
+  - job: "BuildAndPushImage"
+    displayName: "Build and push base image"
+    timeoutInMinutes: 0
+    steps:
+    - task: Docker@2
+      displayName: Login to docker hub
+      inputs:
+        command: login
+        containerRegistry: $(REGISTRY_SVC)
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: jhub_imaging
+        buildContext: .
+        dockerfile: imaging/Dockerfile
+        containerRegistry: $(REGISTRY_SVC)
+        tags: |
+          $(Build.BuildNumber)
